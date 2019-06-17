@@ -23,9 +23,6 @@ export default class FromInputData extends React.Component {
             providentFund: ""
         };
       
-       
-
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -85,7 +82,6 @@ export default class FromInputData extends React.Component {
             
             // Second Year
             var secondYear = monthWork - year;
-            console.log(salaryChange, firstYear, secondYear);
             if(secondYear >= year){
                 switch(secondYear) {
                     case (secondYear >= 12 && secondYear < 35):
@@ -102,12 +98,10 @@ export default class FromInputData extends React.Component {
             }else{
                 secondYear = 0;
             }
-            providentFund =  salaryChange + firstYear + secondYear;
-            
+           
             // Sum of All
-            
+            providentFund =  salaryChange + firstYear + secondYear;
               
-            console.log(salaryChange, firstYear, secondYear);
             return providentFund;
         }
 
@@ -205,7 +199,6 @@ export default class FromInputData extends React.Component {
                         <Button id="summit" outline color="success">Send</Button>{' '}
                     </Form>
                 </Col>
-
                 <Col sm={12} md={5} lg={5} className ="m-5 p-5 bg-sec1-right">
                     <FormGroup row>
                         <Label for="fullName" md={5}>Full Name: </Label>

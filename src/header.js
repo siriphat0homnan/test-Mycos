@@ -16,7 +16,8 @@ export default class Header extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="row pr-0">
+      <div className="col-12 pr-0">
         <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/"><img src='https://mycostech.com/img/smalllogo.png' width='50' height='50'/></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -33,6 +34,7 @@ export default class Header extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
+      </div>
       </div>
     );
   }

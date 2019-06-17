@@ -1,0 +1,19 @@
+[
+    {
+      "firstName": "John",
+      "lastName": "Mayer",
+      "startWorkingDate": "01/03/2012",
+      "position": "Senior software engineer",
+      "salary": "30000",
+      "dateOfBirth": "01/01/1995"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Duncan",
+      "startWorkingDate": "01/03/2017",
+      "position": "Junior software engineer",
+      "salary": "20000",
+      "dateOfBirth": "01/01/1996"
+    }
+  ]
+  

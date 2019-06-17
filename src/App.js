@@ -3,7 +3,8 @@ import './assets/css/App.css';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header';
-import FromInputData from './form.js';
+import FromInputData from './component/form';
+import DataFromJSON from './component/dataFromJSON';
 
 function App() {
   return (
@@ -11,12 +12,20 @@ function App() {
         <Header />
         <section className="section-1">
             <div className="row">
-                <div className="col-12 m-5">
+                <div className="col-12 mt-5">
                     <span className="topicHeader">The Employee Provident Fund </span>
                 </div>
-               
             </div>
             <FromInputData />
+        </section>
+
+        <section className="section-2">
+            <div className="row">
+                <div className="col-12 mt-5">
+                    <span className="topicHeader">Data From JSON File </span>
+                </div>
+            </div>
+            <DataFromJSON />
         </section>
     </div>
   );
