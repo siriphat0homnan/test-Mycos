@@ -139,7 +139,7 @@ export default class FromInputData extends React.Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row mr-0 ml-0">
                 <Col sm={12} md={5} lg={5} className="m-5 p-5 bg-sec1-left">
                     <Form onSubmit={this.handleSubmit}>
                         {/* onSubmit={() => alert(JSON.stringify(this.state))} */}

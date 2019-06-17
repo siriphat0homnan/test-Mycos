@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="App">
         <Header />
+        
+        
         <section className="section-1">
-            <div className="row">
+            <div className="row mr-0 ml-0">
                 <div className="col-12 mt-5">
                     <span className="topicHeader">The Employee Provident Fund </span>
                 </div>
@@ -20,7 +22,7 @@ function App() {
         </section>
 
         <section className="section-2">
-            <div className="row">
+            <div className="row mr-0 ml-0">
                 <div className="col-12 mt-5">
                     <span className="topicHeader">Data From JSON File </span>
                 </div>

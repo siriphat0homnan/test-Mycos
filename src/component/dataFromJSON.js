@@ -39,11 +39,10 @@ export default class DataFromJSON extends React.Component {
         }
 
         alert(JSON.stringify(clone));
-        // document.getElementById('test1').innerHTML = clone;
         // console.log(clone[0][0]);
         // this.setState({rows: clone}, function () {
-        //         console.log(this.state.rows);
-        //     });
+        //     console.log(this.state.rows);
+        // });
        
         // this.setState({rows: clone});
         // clone.forEach(item => {
@@ -54,7 +53,6 @@ export default class DataFromJSON extends React.Component {
         // });
 
         // function getDataFomatHTML(clone){
- 
         //     var arry = [];
         //     clone.forEach(item => {
         //         //  arry.push(<tr><td>{item[0]}</td><td>{item[1]}</td><td>{item[2]}</td><td>{item[3]}</td><td>{item[4]}</td></tr>);
@@ -146,9 +144,9 @@ export default class DataFromJSON extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="mt-5">
                  <Form onSubmit={this.handleSubmit}>
-                    <Button id="summitToShowJSON" outline color="success">Get Data</Button>
+                    <Button id="summitToShowJSON" outline color="success">Alert Data</Button>
                  </Form>
 
                 {/* <table>
