@@ -10,7 +10,6 @@ export default class DataFromJSON extends React.Component {
         this.state = {rows:[]}
     };
 
-
     handleSubmit(event) {
         var i = 0;
         var fullname = [];
