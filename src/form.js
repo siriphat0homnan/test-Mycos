@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+// import DatePicker from "react-datepicker";
+ 
+// import "react-datepicker/dist/react-datepicker.css";
 
 
 export default class FromInputData extends React.Component {
@@ -19,6 +22,9 @@ export default class FromInputData extends React.Component {
             age: "",
             providentFund: ""
         };
+      
+       
+
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -79,22 +85,29 @@ export default class FromInputData extends React.Component {
             
             // Second Year
             var secondYear = monthWork - year;
-            
-            switch(secondYear > 12) {
-                case (secondYear >= 12 && secondYear < 35):
-                    secondYear = secondYear * salary * rateOfPosition * rateOfYear[2];
-                  break;
-                case secondYear >= 36 && secondYear < 59:
-                    secondYear = secondYear * salary * rateOfPosition * rateOfYear[3];
-                  break;
-                case secondYear >= 60:
-                    secondYear = secondYear * salary * rateOfPosition * rateOfYear[4];
-                  break;
-              }
+            console.log(salaryChange, firstYear, secondYear);
+            if(secondYear >= year){
+                switch(secondYear) {
+                    case (secondYear >= 12 && secondYear < 35):
+                        secondYear = secondYear * salary * rateOfPosition * rateOfYear[2];
+                      break;
+                    case secondYear >= 36 && secondYear < 59:
+                        secondYear = secondYear * salary * rateOfPosition * rateOfYear[3];
+                      break;
+                    case secondYear >= 60:
+                        secondYear = secondYear * salary * rateOfPosition * rateOfYear[4];
+                      break;
+                  }
+                  
+            }else{
+                secondYear = 0;
+            }
+            providentFund =  salaryChange + firstYear + secondYear;
             
             // Sum of All
-            providentFund =  salaryChange + firstYear + secondYear;
-           
+            
+              
+            console.log(salaryChange, firstYear, secondYear);
             return providentFund;
         }
 
@@ -154,9 +167,9 @@ export default class FromInputData extends React.Component {
 
                         {/* Input Start Working */}
                         <FormGroup row>
-                            <Label for="startWorkDate" md={3}>Start Work Date: </Label>
+                            <Label for="startWorkDate" md={3}>Start Work Date (A.D): </Label>
                             <Col md={9}>
-                                <Input type="date" id="startWorkDate" name="startWorkDate" onChange={e => { this.setState({ startWorkDate: e.target.value }) }} value={this.state.startWorkDate} />
+                                <Input type="date" id="startWorkDate" name="startWorkDate" data-date-format="mm/dd/yy" onChange={e => { this.setState({ startWorkDate: e.target.value }) }} value={this.state.startWorkDate} />
                             </Col>
                         </FormGroup>
 
@@ -183,7 +196,7 @@ export default class FromInputData extends React.Component {
 
                         {/* Input Birth */}
                         <FormGroup row>
-                            <Label for="dateOfBirth" md={3}>Date of Birth: </Label>
+                            <Label for="dateOfBirth" md={3}>Date of Birth (A.D): </Label>
                             <Col md={9}>
                                 <Input type="date" id="dateOfBirth" name="dateOfBirth" onChange={e => { this.setState({ dateOfBirth: e.target.value }) }} value={this.state.dateOfBirth} />
                             </Col>
@@ -224,6 +237,7 @@ export default class FromInputData extends React.Component {
                         <Input id="providentFund" name="providentFund" value={this.state.providentFund} disabled></Input>
                         </Col>
                     </FormGroup>
+                    
                   
                 </Col>
             </div>
